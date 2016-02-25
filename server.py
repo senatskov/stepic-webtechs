@@ -6,6 +6,6 @@ while True:
 	conn, addr = s.accept()
 	while True:
 		data = conn.recv(1024)
-		if not data: break
+		if data == 'close': break
 		conn.send(data)
 	conn.close()
